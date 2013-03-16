@@ -31,6 +31,12 @@ public class Arco implements Comparable<Arco> {
         this.src = src;
         this.dst = dst;
     }
+    
+    public Arco(int src, int dst, int peso) {
+        this.src = src;
+        this.dst = dst;
+        this.peso = peso;
+    }
 
     /**
      * Retorna una nueva arista que es copia de this.
