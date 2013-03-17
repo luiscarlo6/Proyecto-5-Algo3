@@ -19,7 +19,7 @@ public class Main {
 			System.out.print("Debe ser Java Main archivo.in archivo.out");
 			System.exit(0);
 		}
-		
+
 		try {//Abriendo archivo de entrada
 			archivoIn = new File(args[0]);
 			s = new Scanner(archivoIn);
@@ -34,58 +34,89 @@ public class Main {
 		} catch (IOException e){
 			System.out.println("El archivo no pudo ser creado o no existe");
 			return;
-		}			
-		
+		}	
+
+		if (!s.hasNextInt()){
+			System.out.println("El archivo no cumple con el formato");
+			return;
+		}
 		int numCasos = s.nextInt();
-		
+
+
 		for(int i = 1; i!=numCasos+1;i++){
+			if (!s.hasNextInt()){
+				System.out.println("El archivo no cumple con el formato");
+				return;
+			}
 			int numCity = s.nextInt();
 			BinaryHeap<Arco> arcos = llenar();		
-			
+
 			int arr[] = kruskal(arcos,numCity);
-			
+
 			pw.println("Caso "+i+": "+arr[0]+ " "+arr[1]);
 		}
-		
-		
+
+
 		try {
 			archivoOut.close();
 		} catch (IOException e) {
 		}
 		s.close();
 		pw.close();
-		
+
 	}
-	
+
 	private static BinaryHeap<Arco> llenar(){
 		BinaryHeap<Arco> heap = new BinaryHeap<Arco>();		
+		if (!s.hasNextInt()){
+			System.out.println("El archivo no cumple con el formato");
+			System.exit(1);
+		}
 		int numArcos = s.nextInt();
+		if (!s.hasNextInt()){
+			System.out.println("El archivo no cumple con el formato");
+			System.exit(1);
+		}
 		costeEvento = s.nextInt();
-		
+
 		for(int i = 0; i!=numArcos;i++){
-			Arco a = new Arco(s.nextInt(),s.nextInt(),s.nextInt());
-//			System.out.println(a);
+			if (!s.hasNextInt()){
+				System.out.println("El archivo no cumple con el formato");
+				System.exit(1);
+			}
+			int dst = s.nextInt();
+			if (!s.hasNextInt()){
+				System.out.println("El archivo no cumple con el formato");
+				System.exit(1);
+			}
+			int src = s.nextInt();
+			if (!s.hasNextInt()){
+				System.out.println("El archivo no cumple con el formato");
+				System.exit(1);
+			}
+			int peso = s.nextInt();
+			Arco a = new Arco(src,dst,peso);
 			heap.add(a);
 		}
-		
+
 		return heap;
 	}
-	
+
 	private static int[] kruskal(BinaryHeap<Arco> arcos, int numCity){
 		DisjointSet E = new DisjointSet(numCity);
 		int arr[] = new int[2];
 		int costo = 0;
 		int eventos = numCity;
-		
-		
-		while (!arcos.esVacio()){
+
+
+		while (!arcos.esVacio()&&E.getConexas()>1){
 			Arco e = (Arco) arcos.min();
 			arcos.remove();
-			
+
 			if (E.find(e.getSrc()) != E.find(e.getDst())) {
 				E.union(e.getSrc(), e.getDst());
 				if (costo + eventos*costeEvento>
-					E.getConexas()*costeEvento+(costo+e.getPeso())){
+				E.getConexas()*costeEvento+(costo+e.getPeso())){
 					costo += e.getPeso();
 					eventos = E.getConexas();
 				}
