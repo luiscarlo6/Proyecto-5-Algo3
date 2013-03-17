@@ -19,19 +19,27 @@ public class Arco implements Comparable<Arco> {
      */
     private int dst = -1;
     
+    /**
+     * Peso del arco
+     */
     private int peso = Integer.MAX_VALUE;
 
     /**
      * Crea una arista entre los vertices src y dst.
      *
-     * @param src1 id del Nodo fuente del arco
-     * @param dst1 id del Nodo destino del arco
+     * @param src id del Nodo fuente del arco
+     * @param dst id del Nodo destino del arco
      **/
     public Arco(int src, int dst) {
         this.src = src;
         this.dst = dst;
     }
     
+    /**
+     * @param src uno de los extremos del arco
+     * @param dst el otro extremo
+     * @param peso peso del arco
+     */
     public Arco(int src, int dst, int peso) {
         this.src = src;
         this.dst = dst;
@@ -90,7 +98,7 @@ public class Arco implements Comparable<Arco> {
 	 * @return the peso
 	 */
 	public int getPeso() {
-		return peso;
+		return this.peso;
 	}
 
 	/**
@@ -108,6 +116,8 @@ public class Arco implements Comparable<Arco> {
         return "(" + this.src + ", " + this.dst + ") " + this.peso;
     }
 
+	
+	
 	@Override
 	public int compareTo(Arco a) {
         if (this.peso == a.getPeso()) {

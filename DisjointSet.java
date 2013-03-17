@@ -10,10 +10,22 @@
  */
 public class DisjointSet {
 
+	/**
+	 * Arreglo de "padres" o "representantes", el padre de la posicion
+	 * del arreglo es el valor en esa posicion
+	 */
 	private int[] repres;
+	/**
+	 * Arreglo que dice la profundidad del arbol del representante en la
+	 * pocision K del arreglo
+	 */
 	private int[] rango;
+	/**
+	 * Numero de conjuntos disjuntos 
+	 */
 	int conexas;
 	/**
+	 * @param numNodos 
 	 * 
 	 */
 	public DisjointSet(int numNodos) {
@@ -30,50 +42,65 @@ public class DisjointSet {
 	 * @return the repres
 	 */
 	public int[] getRepres() {
-		return repres;
+		return this.repres;
 	}
 
 	/**
 	 * @return the rango
 	 */
 	public int[] getRango() {
-		return rango;
+		return this.rango;
 	}
 	
+	/**
+	 * @return el numero de conjuntos en el DisjointSet
+	 */
 	public int getConexas(){
 		return this.conexas;
 	}
 
+	/**
+	 * @param x
+	 * @return el representante de x
+	 */
 	public int find(int x){
 		if (x!=this.repres[x]){
 			return find(this.repres[x]);
 		}
-		else{
-			return x;
-			
-		}
+		return x;
 	}
 	
 	
+	/**
+	 * @param x
+	 * @param y
+	 * @return true si se unieron x, y , false si x, y ya estaban en el mismo
+	 * conjunto
+	 */
 	public boolean union(int x, int y){
 		return this.link(find(x),find(y));
 	}
 	
+	/**
+	 * @param px representante x
+	 * @param py representante y
+	 * @return true si cambio el representante de x o y, false si 
+	 * tienen el mismo (ya estan unidos)
+	 */
 	private boolean link(int px, int py){
 		if(px == py){
 			return false;
-		}else{		
-			this.conexas--; 
-			if(rango[px]>rango[py]){
-				repres[py] = px;
-			}else if(rango[py]>rango[px]){
-				repres[px] = py;
-			}else{
-				repres[py] = px;
-				rango[px]++;	
-			}
-			return true;
 		}
+		this.conexas--; 
+		if(this.rango[px]>this.rango[py]){
+			this.repres[py] = px;
+		}else if(this.rango[py]>this.rango[px]){
+			this.repres[px] = py;
+		}else{
+			this.repres[py] = px;
+			this.rango[px]++;	
+		}
+		return true;
 	}
 
 }
