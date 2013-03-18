@@ -2,8 +2,13 @@ import java.io.*;
 import java.util.*;
 
 /**
- * @author luiscarlo
+ * Clase que ejecuta el programa principal
+ * 
+ * Luiscarlo Rivera, 09-11020
+ * Jose Prado, 09-11006
  *
+ * Proyecto 5
+ * Prof Lab: Juan Arocha
  */
 public class Main {
 	/**
@@ -19,8 +24,7 @@ public class Main {
 	 */
 	static int costeEvento = -1;
 	/**
-	 * @param args
-	 *            Comandos de entrada
+	 * @param args Comandos de entrada
 	 */
 	public static void main(String args[]) {
 
@@ -28,7 +32,7 @@ public class Main {
 		FileWriter archivoOut;
 		if (args.length != 2) {
 			System.out.print("Error en la linea de argumentos");
-			System.out.print("Debe ser Java Main archivo.in archivo.out");
+			System.out.print("Debe ser Java Main <archivo.in> <archivo.out>");
 			System.exit(0);
 		}
 
@@ -53,8 +57,12 @@ public class Main {
 			return;
 		}
 		int numCasos = s.nextInt();
-
-
+		
+		if (numCasos>=25){
+			System.out.println("El archivo no cumple con el formato");
+			return;
+		}
+		
 		for(int i = 1; i!=numCasos+1;i++){
 			if (!s.hasNextInt()){
 				System.out.println("El archivo no cumple con el formato");

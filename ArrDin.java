@@ -4,7 +4,7 @@
  * Luiscarlo Rivera, 09-11020
  * Jose Prado, 09-11006
  *
- * Proyecto 4
+ * Proyecto 5
  * Prof Lab: Juan Arocha
  *
  * @param <E> Tipo de objetos que guardara el arreglo

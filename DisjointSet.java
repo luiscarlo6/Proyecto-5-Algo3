@@ -2,11 +2,12 @@
  * Representa un Conjunto disjunto de bosques
  * Implementacion del libro
  * Introduction to Algorithms Thomas H. Cormen
- */
-
-/**
- * @author Luiscarlo
+ * 
+ * Luiscarlo Rivera, 09-11020
+ * Jose Prado, 09-11006
  *
+ * Proyecto 5
+ * Prof Lab: Juan Arocha
  */
 public class DisjointSet {
 
