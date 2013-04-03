@@ -1,11 +1,9 @@
 /**
  * Clase que almacena la informacion de las aristas en el grafo.
  * 
- * Luiscarlo Rivera, 09-11020 
- *	Jose Prado, 09-11006
+ * Luiscarlo Rivera, 09-11020 Jose Prado, 09-11006
  * 
- * Proyecto 5
- *	Prof Lab: Juan Arocha
+ * Proyecto 5 Prof Lab: Juan Arocha
  * 
  **/
 public class Arco implements Comparable<Arco> {
@@ -27,8 +25,10 @@ public class Arco implements Comparable<Arco> {
 	/**
 	 * Crea una arista entre los vertices src y dst.
 	 * 
-	 * @param src id del Nodo fuente del arco
-	 * @param dst id del Nodo destino del arco
+	 * @param src
+	 *            id del Nodo fuente del arco
+	 * @param dst
+	 *            id del Nodo destino del arco
 	 **/
 	public Arco(int src, int dst) {
 		this.src = src;
@@ -36,9 +36,12 @@ public class Arco implements Comparable<Arco> {
 	}
 
 	/**
-	 * @param src uno de los extremos del arco
-	 * @param dst el otro extremo
-	 * @param peso peso del arco
+	 * @param src
+	 *            uno de los extremos del arco
+	 * @param dst
+	 *            el otro extremo
+	 * @param peso
+	 *            peso del arco
 	 */
 	public Arco(int src, int dst, int peso) {
 		this.src = src;
@@ -102,7 +105,8 @@ public class Arco implements Comparable<Arco> {
 	}
 
 	/**
-	 * @param peso the peso to set
+	 * @param peso
+	 *            the peso to set
 	 */
 	public void setPeso(int peso) {
 		this.peso = peso;

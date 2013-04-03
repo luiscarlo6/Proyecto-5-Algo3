@@ -1,14 +1,12 @@
 /**
  * Clase que implementa un arreglo dinamico.
  * 
- * Luiscarlo Rivera, 09-11020 
- *	Jose Prado, 09-11006
+ * Luiscarlo Rivera, 09-11020 Jose Prado, 09-11006
  * 
- * Proyecto 5 
- * Prof Lab: Juan Arocha
+ * Proyecto 5 Prof Lab: Juan Arocha
  * 
- * @param <E> Tipo de objetos que guardara el arreglo
- *
+ * @param <E>
+ *            Tipo de objetos que guardara el arreglo
  */
 public class ArrDin<E> {
 
@@ -42,7 +40,8 @@ public class ArrDin<E> {
 	/**
 	 * Agrega un elemento en la posicion siguiente vacia
 	 * 
-	 * @param e elemento a agregar
+	 * @param e
+	 *            elemento a agregar
 	 * @return true si agrego, false si no agrego
 	 **/
 	public boolean add(E e) {
@@ -59,8 +58,10 @@ public class ArrDin<E> {
 	/**
 	 * Agrega un elemento a la posicion "pos" del arreglo
 	 * 
-	 * @param e elemento a agregar
-	 * @param pos	pos del arreglo donde se quiere agregar
+	 * @param e
+	 *            elemento a agregar
+	 * @param pos
+	 *            pos del arreglo donde se quiere agregar
 	 * @return true si agrego, false si no agrego
 	 **/
 	public boolean add(E e, int pos) {
@@ -77,7 +78,8 @@ public class ArrDin<E> {
 	/**
 	 * Retorna el objeto almacenado en la posicion "pos" del arreglo
 	 * 
-	 * @param pos posicion del arreglo
+	 * @param pos
+	 *            posicion del arreglo
 	 * @return elemento en la posicion pos del arreglo
 	 **/
 	public Object get(int pos) {
@@ -141,7 +143,8 @@ public class ArrDin<E> {
 	}
 
 	/**
-	 * @param pos posicion en el arreglo del elemento a eliminar
+	 * @param pos
+	 *            posicion en el arreglo del elemento a eliminar
 	 * @return true si elimino un objeto, false si no lo hizo
 	 **/
 	public boolean remove(int pos) {

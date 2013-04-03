@@ -1,13 +1,12 @@
 /**
  * Clase que implementa un heap binario
  * 
- * Luiscarlo Rivera, 09-11020
- *	Jose Prado, 09-11006
+ * Luiscarlo Rivera, 09-11020 Jose Prado, 09-11006
  * 
- * Proyecto 5 
- *	Prof Lab: Juan Arocha
+ * Proyecto 5 Prof Lab: Juan Arocha
  * 
- * @param <E> Tipo de objetos que guardara el arreglo
+ * @param <E>
+ *            Tipo de objetos que guardara el arreglo
  */
 public class BinaryHeap<E extends Comparable<E>> {
 
@@ -26,7 +25,8 @@ public class BinaryHeap<E extends Comparable<E>> {
 	/**
 	 * Añade un elemento al heap
 	 * 
-	 * @param e elemento a agregar al heap
+	 * @param e
+	 *            elemento a agregar al heap
 	 * 
 	 */
 	public void add(E e) {
@@ -73,7 +73,8 @@ public class BinaryHeap<E extends Comparable<E>> {
 	}
 
 	/**
-	 * @param pos Reordena el heap hacia abajo
+	 * @param pos
+	 *            Reordena el heap hacia abajo
 	 */
 	@SuppressWarnings("unchecked")
 	private void bajar(int pos) {
@@ -97,7 +98,8 @@ public class BinaryHeap<E extends Comparable<E>> {
 	}
 
 	/**
-	 * @param pos reordena el heap hacia arriba
+	 * @param pos
+	 *            reordena el heap hacia arriba
 	 */
 	@SuppressWarnings("unchecked")
 	private void subir(int pos) {
